@@ -1,9 +1,25 @@
 version: '2'
 services:
+  db_app:
+    container_name: db_app
+    image: mysql:5.7
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    ports:
+      - "3306:3306"
+    env_file: .env
+    restart: always
+    logging:
+      options:
+        max-size: 5m
+        max-file: "10"
   app:
+    container_name: spring_app
     build: .
     image: tiqwab/boot:0.0.1
+    depends_on:
+      - db_app
     ports:
       - "8080:8080"
     volumes:
       - ".:/app"
+    env_file: .env

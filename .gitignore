@@ -1,6 +1,11 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+.DS_Store
+
+### 設定ファイル  ###
+src/main/resources/application.properties
+.env
 
 ### STS ###
 .apt_generated
