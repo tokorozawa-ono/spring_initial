@@ -1,1 +1,1 @@
-INSERT INTO city (name, country, phone) VALUES ('test', 'JP', '0120000000');
+INSERT INTO city (name, country, phone) VALUES ('日本語たろう', 'JP', '0120000000');
